@@ -32,13 +32,20 @@ def extract():
     # Realice un bucle que recorra una lista del 0 al 10 inclusive
     # En cada iteración de ese bucle realizar un "yield" del valor
     # tomado de la lista
-    yield 1
+    
+    for x in range(11):
+        
+        yield x
 
 
 def transform(x):
     # Por cada número que ingrese a transform
     # multiplicarlo por 5
-    yield 1
+    result = x*5
+
+
+
+    yield result
 
 
 def load(result):
@@ -48,7 +55,20 @@ def load(result):
     # o insertando a una base de datos a elección.
     # El objetivo es que quede almacenado en un archivo
     # o una base de datos la tabla del 5
-    print('Fin!')
+
+    fo = open('tabla_5.txt', 'a')
+
+    
+    
+    
+    fo.write(str(result)+'\n')
+
+    fo.flush()
+    fo.close()
+
+    
+    
+    
 
 
 def get_graph(**options):
